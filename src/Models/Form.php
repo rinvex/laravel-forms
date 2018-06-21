@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Rinvex\Forms\Models;
 
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Spatie\Sluggable\SlugOptions;
 use Rinvex\Support\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Model;
@@ -12,6 +11,7 @@ use Rinvex\Cacheable\CacheableEloquent;
 use Rinvex\Support\Traits\HasTranslations;
 use Rinvex\Support\Traits\ValidatingTrait;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
  * Rinvex\Forms\Models\Form.
@@ -25,8 +25,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property array                                                                           $content
  * @property array                                                                           $actions
  * @property array                                                                           $submission
- * @property boolean                                                                         $is_active
- * @property boolean                                                                         $is_public
+ * @property bool                                                                         $is_active
+ * @property bool                                                                         $is_public
  * @property \Carbon\Carbon|null                                                             $created_at
  * @property \Carbon\Carbon|null                                                             $updated_at
  * @property \Carbon\Carbon|null                                                             $deleted_at

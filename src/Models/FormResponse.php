@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Rinvex\Forms\Models;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Rinvex\Cacheable\CacheableEloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Rinvex\Support\Traits\ValidatingTrait;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int                                                                             $id
  * @property string                                                                          $unique_identifier
  * @property array                                                                           $content
- * @property integer                                                                         $form_id
+ * @property int                                                                         $form_id
  * @property int                                                                             $user_id
  * @property string                                                                          $user_type
  * @property \Carbon\Carbon|null                                                             $created_at
