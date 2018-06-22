@@ -15,7 +15,10 @@
          printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer">
     <testsuites>
         <testsuite name="Rinvex Forms Unit Test Suite">
-            <directory>tests</directory>
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Rinvex Forms Integration Test Suite">
+            <directory>tests/Integration</directory>
         </testsuite>
     </testsuites>
     <filter>
