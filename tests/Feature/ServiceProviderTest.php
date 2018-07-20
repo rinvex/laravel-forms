@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rinvex\Forms\Tests\Integration;
+namespace Rinvex\Forms\Tests\Feature;
 
 use ReflectionClass;
 use PHPUnit\Framework\TestCase;
