@@ -9,6 +9,10 @@ env:
     - COMPOSER_FLAGS="--prefer-lowest"
     - COMPOSER_FLAGS=""
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+
 before_script:
   - travis_retry composer self-update
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
@@ -24,4 +28,4 @@ notifications:
   email: false
   slack:
     rooms:
-      - secure: f1dmaMW1yzsQLqdkCFtiEIiw41dkn8ylJk0SHCPXGvCK3+AeLp+LfRUrVlagX+wmLLGfCrZ6V31z5bH1RnIjUejVLBCrkoL2mTvQphsA8vczrxs0DixMRz7L07VTfvEWw88MkW6G/zYr6HO0VII5SYUmQqHbMpTCqRIUWGXGbyOraBz64BRrkdhy9If06CzZ1vua8ChAJ+jSMa4ffBgvpG4Wo+eqR2Phtigd0HhxY/AnjP1TJsX05Pw33L3wFnn9som+eHqrDSvTeYncWDsHT6p92gNNmf9FLavHoiV97Ut4sgRP5N8yLKaOuD+bNXTkV0o4caQGDKnd0Suz71sHIz5L8zxYIOy+6svNVqY/0XScrfaON0NKn63JvhIS/4Beb9OrdQgp//LPi4CL91nld2ujpdEIHqBR0KJHdWJ2nylGTQ9w/TiNR4o4ObhIq/ceUyg6Wddaq/BgLe2g56hho1z3Ill3hzlkJoz36D/RlQ364PB3q4XZ+H8mTYDejUk6ZUYTB7gvZ0XO2GhZ247+E1MbNU9MsryO9YyHMMggPJEPpgBDfYt1eyAJafM4PWkZjk9umvy2SODp+INUcfrHXNeTNn+jGp13buecDGPeMlUrPGHPLHR9aINZXpNoJ68nmF34OdTzlwRFdTBdnIPQUHxAM+1+GRT0tnd+KfMlcko=
+      - secure: D/cdo3l27M2qUlv6xBw8wyBgQsRIPiFmghhfAETdNiTls1ciWWlmZggGPi+H6ADo0utnJ10eIrftNjNN59kiE8lLG1e38/SjK9ehrjCs4o1H12eu+cynlxHdcjpHRFXardimO3wTHaOe1olosx6QQql9D3XQc6LzP9BYaoOrS2gRGdADciSWLcCvj7KbPSPKQZfKLy5vdd7twrldlBYiFDGyXT3IvZyeefKTmV/AWBttUJtiFsgvT+5X+T4QswWmVW6sXE8HarYo0LIWa5uf+MNjHqIWKv/GrhNw2rRmued9FYKVRz4e9++jXjiUkqDSyHZqSpJ8XvAlVe3dCnKKWLpKSabqpDTYsaDTq2v77K+HcsGXlLmfJMGtrDB9r3mwOTi1GPjXcPGybTCTSNyOVec5msOnMcFYNHH3vqmV/xIAOpjIsCOzZftDy98OY/80k046R1lJbUjfYppjX1A8EqbMxG7dh6dhd3vLLzzQlpt8P1BLurf2e1Y4GP6zE6Se6G3ppH5RnpRfBx1QflO/RqLUZvmXfC2L62tU5xqlt0EtfkTAzi8lCPjhZ+eoFqC/9gGc3N+gpXD4PdFi/2/ETBY32XyGpA6E6NJJIFWF5RsePYAIyn9nXK641WojJA3HfKGXtajA4hAuj1hlqhwWsBwBVk1NkWHgIqV/l6VUE00=
