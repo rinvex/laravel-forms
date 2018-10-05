@@ -2,19 +2,19 @@
 
 **Rinvex Forms** is a dynamic form builder for Laravel, it's like the missing gem, the possibilities of using it are endless! With flexible API and powerful features you can build almost every kind of complex form with ease.
 
-[![Packagist](https://img.shields.io/packagist/v/rinvex/forms.svg?label=Packagist&style=flat-square)](https://packagist.org/packages/rinvex/forms)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/rinvex/forms.svg?label=Scrutinizer&style=flat-square)](https://scrutinizer-ci.com/g/rinvex/forms/)
-[![Code Climate](https://img.shields.io/codeclimate/github/rinvex/forms.svg?label=CodeClimate&style=flat-square)](https://codeclimate.com/github/rinvex/forms)
-[![Travis](https://img.shields.io/travis/rinvex/forms.svg?label=TravisCI&style=flat-square)](https://travis-ci.org/rinvex/forms)
+[![Packagist](https://img.shields.io/packagist/v/rinvex/laravel-forms.svg?label=Packagist&style=flat-square)](https://packagist.org/packages/rinvex/laravel-forms)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/rinvex/laravel-forms.svg?label=Scrutinizer&style=flat-square)](https://scrutinizer-ci.com/g/rinvex/laravel-forms/)
+[![Code Climate](https://img.shields.io/codeclimate/github/rinvex/laravel-forms.svg?label=CodeClimate&style=flat-square)](https://codeclimate.com/github/rinvex/laravel-forms)
+[![Travis](https://img.shields.io/travis/rinvex/laravel-forms.svg?label=TravisCI&style=flat-square)](https://travis-ci.org/rinvex/laravel-forms)
 [![StyleCI](https://styleci.io/repos/138185596/shield)](https://styleci.io/repos/138185596)
-[![License](https://img.shields.io/packagist/l/rinvex/forms.svg?label=License&style=flat-square)](https://github.com/rinvex/forms/blob/develop/LICENSE)
+[![License](https://img.shields.io/packagist/l/rinvex/laravel-forms.svg?label=License&style=flat-square)](https://github.com/rinvex/laravel-forms/blob/develop/LICENSE)
 
 
 ## Installation
 
 1. Install the package via composer:
     ```shell
-    composer require rinvex/forms
+    composer require rinvex/laravel-forms
     ```
 
 2. Execute migrations via the following command:
