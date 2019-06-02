@@ -7,12 +7,15 @@ namespace Rinvex\Forms\Providers;
 use Rinvex\Forms\Models\Form;
 use Rinvex\Forms\Models\FormResponse;
 use Illuminate\Support\ServiceProvider;
+use Rinvex\Support\Traits\ConsoleTools;
 use Rinvex\Forms\Console\Commands\MigrateCommand;
 use Rinvex\Forms\Console\Commands\PublishCommand;
 use Rinvex\Forms\Console\Commands\RollbackCommand;
 
 class FormsServiceProvider extends ServiceProvider
 {
+    use ConsoleTools;
+
     /**
      * The commands to be registered.
      *
@@ -48,36 +51,8 @@ class FormsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Load migrations
-        ! $this->app->runningInConsole() || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
-
         // Publish Resources
-        ! $this->app->runningInConsole() || $this->publishResources();
-    }
-
-    /**
-     * Publish resources.
-     *
-     * @return void
-     */
-    protected function publishResources(): void
-    {
-        $this->publishes([realpath(__DIR__.'/../../config/config.php') => config_path('rinvex.forms.php')], 'rinvex-forms-config');
-        $this->publishes([realpath(__DIR__.'/../../database/migrations') => database_path('migrations')], 'rinvex-forms-migrations');
-    }
-
-    /**
-     * Register console commands.
-     *
-     * @return void
-     */
-    protected function registerCommands(): void
-    {
-        // Register artisan commands
-        foreach ($this->commands as $key => $value) {
-            $this->app->singleton($value, $key);
-        }
-
-        $this->commands(array_values($this->commands));
+        ! $this->app->runningInConsole() || $this->publishesConfig('rinvex/laravel-forms');
+        ! $this->app->runningInConsole() || $this->publishesMigrations('rinvex/laravel-forms');
     }
 }
