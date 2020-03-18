@@ -17,7 +17,7 @@ class CreateFormsTable extends Migration
     {
         Schema::create(config('rinvex.forms.tables.forms'), function (Blueprint $table) {
             // Columns
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->nullableMorphs('entity');
             $table->string('slug');
             $table->{$this->jsonable()}('name');
