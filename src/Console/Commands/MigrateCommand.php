@@ -31,7 +31,11 @@ class MigrateCommand extends Command
     {
         $this->alert($this->description);
 
-        if (file_exists($path = 'database/migrations/rinvex/laravel-forms')) {
+        $path = config('rinvex.forms.autoload_migrations') ?
+            'vendor/rinvex/laravel-forms/database/migrations' :
+            'database/migrations/rinvex/laravel-forms';
+
+        if (file_exists($path)) {
             $this->call('migrate', [
                 '--step' => true,
                 '--path' => $path,
