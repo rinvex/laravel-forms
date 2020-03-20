@@ -17,10 +17,10 @@ class CreateFormResponsesTable extends Migration
     {
         Schema::create(config('rinvex.forms.tables.form_responses'), function (Blueprint $table) {
             // Columns
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('unique_identifier')->nullable();
             $table->{$this->jsonable()}('content');
-            $table->integer('form_id')->unsigned();
+            $table->bigInteger('form_id')->unsigned();
             $table->nullableMorphs('user');
             $table->timestamps();
             $table->softDeletes();
