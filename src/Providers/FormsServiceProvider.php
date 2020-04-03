@@ -54,6 +54,6 @@ class FormsServiceProvider extends ServiceProvider
         // Publish Resources
         $this->publishesConfig('rinvex/laravel-forms');
         $this->publishesMigrations('rinvex/laravel-forms');
-        ! $this->autoloadMigrations('rinvex.forms') || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
+        ! $this->autoloadMigrations('rinvex/forms') || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
     }
 }
