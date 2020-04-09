@@ -43,7 +43,7 @@ class FormsServiceProvider extends ServiceProvider
         $formModel === FormResponse::class || $this->app->alias('rinvex.forms.form_response', FormResponse::class);
 
         // Register console commands
-        ! $this->app->runningInConsole() || $this->registerCommands();
+        $this->registerCommands();
     }
 
     /**
