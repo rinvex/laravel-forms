@@ -133,6 +133,6 @@ class FormResponse extends Model
      */
     public function form(): BelongsTo
     {
-        return $this->belongsTo(config('rinvex.forms.models.form'), 'form_id', 'id');
+        return $this->belongsTo(config('rinvex.forms.models.form'), 'form_id', 'id', 'form');
     }
 }
