@@ -110,7 +110,7 @@ class FormResponse extends Model
      */
     public function user()
     {
-        return $this->morphTo('user', 'user_type', 'user_id');
+        return $this->morphTo('user', 'user_type', 'user_id', 'id');
     }
 
     /**

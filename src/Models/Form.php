@@ -184,6 +184,6 @@ class Form extends Model
      */
     public function entity(): MorphTo
     {
-        return $this->morphTo('entity', 'entity_type', 'entity_id');
+        return $this->morphTo('entity', 'entity_type', 'entity_id', 'id');
     }
 }
