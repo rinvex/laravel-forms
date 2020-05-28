@@ -186,4 +186,28 @@ class Form extends Model
     {
         return $this->morphTo('entity', 'entity_type', 'entity_id', 'id');
     }
+
+    /**
+     * Activate the form.
+     *
+     * @return $this
+     */
+    public function activate()
+    {
+        $this->update(['is_active' => true]);
+
+        return $this;
+    }
+
+    /**
+     * Deactivate the form.
+     *
+     * @return $this
+     */
+    public function deactivate()
+    {
+        $this->update(['is_active' => false]);
+
+        return $this;
+    }
 }
