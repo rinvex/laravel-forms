@@ -111,9 +111,9 @@ class Form extends Model
      */
     protected $rules = [
         'entity_id' => 'nullable|integer',
-        'entity_type' => 'nullable|string|max:150',
-        'slug' => 'required|string',
-        'name' => 'required|string|max:150',
+        'entity_type' => 'nullable|string|strip_tags|max:150',
+        'slug' => 'required|string|strip_tags|max:150',
+        'name' => 'required|string|strip_tags|max:150',
         'description' => 'nullable|string|max:10000',
         'content' => 'required|array',
         'actions' => 'nullable|array',
@@ -184,6 +184,30 @@ class Form extends Model
      */
     public function entity(): MorphTo
     {
-        return $this->morphTo('entity', 'entity_type', 'entity_id');
+        return $this->morphTo('entity', 'entity_type', 'entity_id', 'id');
+    }
+
+    /**
+     * Activate the form.
+     *
+     * @return $this
+     */
+    public function activate()
+    {
+        $this->update(['is_active' => true]);
+
+        return $this;
+    }
+
+    /**
+     * Deactivate the form.
+     *
+     * @return $this
+     */
+    public function deactivate()
+    {
+        $this->update(['is_active' => false]);
+
+        return $this;
     }
 }
