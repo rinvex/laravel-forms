@@ -7,7 +7,6 @@ namespace Rinvex\Forms\Models;
 use Spatie\Sluggable\SlugOptions;
 use Rinvex\Support\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Model;
-use Rinvex\Cacheable\CacheableEloquent;
 use Rinvex\Support\Traits\HasTranslations;
 use Rinvex\Support\Traits\ValidatingTrait;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -51,7 +50,6 @@ class Form extends Model
     use HasSlug;
     use ValidatingTrait;
     use HasTranslations;
-    use CacheableEloquent;
 
     /**
      * {@inheritdoc}
