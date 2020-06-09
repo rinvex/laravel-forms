@@ -93,11 +93,11 @@ class FormResponse extends Model
 
         $this->setTable(config('rinvex.forms.tables.form_responses'));
         $this->setRules([
-            'unique_identifier' => 'nullable|string',
+            'unique_identifier' => 'nullable|string|strip_tags|max:150',
             'content' => 'required|array',
             'form_id' => 'required|integer|exists:'.config('rinvex.forms.tables.forms').',id',
             'user_id' => 'nullable|integer',
-            'user_type' => 'nullable|string',
+            'user_type' => 'nullable|string|strip_tags|max:150',
         ]);
     }
 
