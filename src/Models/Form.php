@@ -7,7 +7,6 @@ namespace Rinvex\Forms\Models;
 use Spatie\Sluggable\SlugOptions;
 use Rinvex\Support\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Model;
-use Rinvex\Cacheable\CacheableEloquent;
 use Rinvex\Support\Traits\HasTranslations;
 use Rinvex\Support\Traits\ValidatingTrait;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -51,7 +50,6 @@ class Form extends Model
     use HasSlug;
     use ValidatingTrait;
     use HasTranslations;
-    use CacheableEloquent;
 
     /**
      * {@inheritdoc}
@@ -112,12 +110,12 @@ class Form extends Model
     protected $rules = [
         'entity_id' => 'nullable|integer',
         'entity_type' => 'nullable|string|strip_tags|max:150',
-        'slug' => 'required|string|strip_tags|max:150',
+        'slug' => 'required|alpha_dash|max:150',
         'name' => 'required|string|strip_tags|max:150',
         'description' => 'nullable|string|max:10000',
         'content' => 'required|array',
-        'actions' => 'nullable|array',
-        'submission' => 'nullable|array',
+        'actions' => 'required|array',
+        'submission' => 'required|array',
         'is_active' => 'sometimes|boolean',
         'is_public' => 'sometimes|boolean',
     ];
