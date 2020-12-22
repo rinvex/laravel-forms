@@ -112,7 +112,7 @@ class Form extends Model
         'entity_type' => 'nullable|string|strip_tags|max:150',
         'slug' => 'required|alpha_dash|max:150',
         'name' => 'required|string|strip_tags|max:150',
-        'description' => 'nullable|string|max:10000',
+        'description' => 'nullable|string|max:32768',
         'content' => 'required|array',
         'actions' => 'required|array',
         'submission' => 'required|array',
