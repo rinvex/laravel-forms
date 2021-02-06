@@ -36,11 +36,10 @@ class FormsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(realpath(__DIR__.'/../../config/config.php'), 'rinvex.forms');
 
         // Bind eloquent models to IoC container
-        $this->app->singleton('rinvex.forms.form', $formModel = $this->app['config']['rinvex.forms.models.form']);
-        $formModel === Form::class || $this->app->alias('rinvex.forms.form', Form::class);
-
-        $this->app->singleton('rinvex.forms.form_response', $formModel = $this->app['config']['rinvex.forms.models.form_response']);
-        $formModel === FormResponse::class || $this->app->alias('rinvex.forms.form_response', FormResponse::class);
+        $this->registerModels([
+            'rinvex.forms.form' => Form::class,
+            'rinvex.forms.form_response' => FormResponse::class,
+        ]);
 
         // Register console commands
         $this->registerCommands($this->commands);
