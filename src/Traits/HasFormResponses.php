@@ -49,6 +49,6 @@ trait HasFormResponses
      */
     public function formResponses(): MorphMany
     {
-        return $this->morphMany(config('rinvex.forms.models.form_response'), 'user');
+        return $this->morphMany(config('rinvex.forms.models.form_response'), 'user', 'user_type', 'user_id');
     }
 }

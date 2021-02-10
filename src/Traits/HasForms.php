@@ -49,6 +49,6 @@ trait HasForms
      */
     public function forms(): MorphMany
     {
-        return $this->morphMany(config('rinvex.forms.models.form'), 'entity');
+        return $this->morphMany(config('rinvex.forms.models.form'), 'entity', 'entity_type', 'entity_id');
     }
 }
