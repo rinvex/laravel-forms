@@ -9,6 +9,7 @@ use Rinvex\Support\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Model;
 use Rinvex\Support\Traits\HasTranslations;
 use Rinvex\Support\Traits\ValidatingTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
@@ -48,6 +49,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class Form extends Model
 {
     use HasSlug;
+    use SoftDeletes;
     use ValidatingTrait;
     use HasTranslations;
 
