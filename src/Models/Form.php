@@ -109,18 +109,7 @@ class Form extends Model
      *
      * @var array
      */
-    protected $rules = [
-        'entity_id' => 'nullable|integer',
-        'entity_type' => 'nullable|string|strip_tags|max:150',
-        'slug' => 'required|alpha_dash|max:150',
-        'name' => 'required|string|strip_tags|max:150',
-        'description' => 'nullable|string|max:32768',
-        'content' => 'required|array',
-        'actions' => 'required|array',
-        'submission' => 'required|array',
-        'is_active' => 'sometimes|boolean',
-        'is_public' => 'sometimes|boolean',
-    ];
+    protected $rules = [];
 
     /**
      * Whether the model should throw a
@@ -140,6 +129,18 @@ class Form extends Model
         parent::__construct($attributes);
 
         $this->setTable(config('rinvex.forms.tables.forms'));
+        $this->setRules([
+            'entity_id' => 'nullable|integer',
+            'entity_type' => 'nullable|string|strip_tags|max:150',
+            'slug' => 'required|alpha_dash|max:150',
+            'name' => 'required|string|strip_tags|max:150',
+            'description' => 'nullable|string|max:32768',
+            'content' => 'required|array',
+            'actions' => 'required|array',
+            'submission' => 'required|array',
+            'is_active' => 'sometimes|boolean',
+            'is_public' => 'sometimes|boolean',
+        ]);
     }
 
     /**
