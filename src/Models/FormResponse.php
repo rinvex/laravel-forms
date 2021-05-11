@@ -91,8 +91,6 @@ class FormResponse extends Model
      */
     public function __construct(array $attributes = [])
     {
-        parent::__construct($attributes);
-
         $this->setTable(config('rinvex.forms.tables.form_responses'));
         $this->setRules([
             'unique_identifier' => 'nullable|string|strip_tags|max:150',
@@ -101,6 +99,8 @@ class FormResponse extends Model
             'user_id' => 'nullable|integer',
             'user_type' => 'nullable|string|strip_tags|max:150',
         ]);
+
+        parent::__construct($attributes);
     }
 
     /**

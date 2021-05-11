@@ -126,8 +126,6 @@ class Form extends Model
      */
     public function __construct(array $attributes = [])
     {
-        parent::__construct($attributes);
-
         $this->setTable(config('rinvex.forms.tables.forms'));
         $this->setRules([
             'entity_id' => 'nullable|integer',
@@ -141,6 +139,8 @@ class Form extends Model
             'is_active' => 'sometimes|boolean',
             'is_public' => 'sometimes|boolean',
         ]);
+
+        parent::__construct($attributes);
     }
 
     /**
