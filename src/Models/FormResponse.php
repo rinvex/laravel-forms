@@ -92,7 +92,7 @@ class FormResponse extends Model
     public function __construct(array $attributes = [])
     {
         $this->setTable(config('rinvex.forms.tables.form_responses'));
-        $this->setRules([
+        $this->mergeRules([
             'unique_identifier' => 'nullable|string|strip_tags|max:150',
             'content' => 'required|array',
             'form_id' => 'required|integer|exists:'.config('rinvex.forms.tables.forms').',id',

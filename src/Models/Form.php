@@ -127,7 +127,7 @@ class Form extends Model
     public function __construct(array $attributes = [])
     {
         $this->setTable(config('rinvex.forms.tables.forms'));
-        $this->setRules([
+        $this->mergeRules([
             'entity_id' => 'nullable|integer',
             'entity_type' => 'nullable|string|strip_tags|max:150',
             'slug' => 'required|alpha_dash|max:150',
