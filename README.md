@@ -1,6 +1,10 @@
 # Rinvex Forms
 
-This package is NOT actively maintained! Want to jump in as a maintainer? Ping me [@omranic](https://twitter.com/omranic)
+⚠️ This package is abandoned and no longer maintained. No replacement package was suggested. ⚠️
+
+👉 If you are interested to step on as the main maintainer of this package, please [reach out to me](https://twitter.com/omranic)!
+
+---
 
 
 **Rinvex Forms** is a dynamic form builder for Laravel, it's like the missing gem, the possibilities of using it are endless! With flexible API and powerful features you can build almost every kind of complex form with ease.
